@@ -1,0 +1,21 @@
+{
+  "name": "kushagra-precily",
+  "version": "1.0.0",
+  "description": "use 'npm start' in frontend folder and 'npx nodemon' in backend and you are good to go Hit me up on madhukarkushagra@gmail.com if needed",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "start": "cd backend && npm run prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kushagra-Madhukar/km-precily.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kushagra-Madhukar/km-precily/issues"
+  },
+  "homepage": "https://github.com/Kushagra-Madhukar/km-precily#readme"
+}
