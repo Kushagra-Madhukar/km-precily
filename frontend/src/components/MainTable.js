@@ -30,6 +30,9 @@ const BodyRow = styled.tr`
 const TData = styled.td`
   text-align: center;
 `
+const CountButton = styled(Button)`
+  background-color: green;
+`
 
 const MainTable = () => {
     const [data, setData] = useState([])
@@ -37,6 +40,7 @@ const MainTable = () => {
     const [isEditing, setIsEditing] = useState(false)
     const [isAdd, setIsAdd] = useState(false)
     const [currentData, setCurrentData] = useState({id: '', name: '', number: ''})
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
       if(!isEditing && !isAdd){
@@ -71,16 +75,20 @@ const MainTable = () => {
       console.log(item._id)
       setIsAdd(false)
       setCurrentData({id: item._id, name: item.name, number: item.number})
+      setCount(count => count + 1)
       setIsEditing(true)
     }
 
     const addHandler = () => {
       setIsEditing(false)
       setCurrentData({id: '', name: '', number: ''})
+      setCount(count => count + 1)
       setIsAdd(true)
     }
 
     return (
+      <>
+
           <TableContainer>
             <Table>
                 <Thead>
@@ -106,9 +114,11 @@ const MainTable = () => {
                 }
                 </tbody>
             </Table>
+          <CountButton variant="contained" onClick={() => alert(`You have called add and update api features ${count} times`)}>Count</CountButton>
             {isEditing ? <FormDialog data={currentData} openDialog={setIsEditing} type="edit"/> : null}
             {isAdd ? <FormDialog data={currentData} openDialog={setIsAdd} type="add"/> : null}
             </TableContainer>
+            </>
     )
 }
 
