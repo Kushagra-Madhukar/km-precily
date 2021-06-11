@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node start.js",
-    "local": "NODE_ENV=local npx nodemon start.js",
+    "dev": "NODE_ENV=development node index.js",
+    "local": "NODE_ENV=local npx nodemon index.js",
     "start": "nodemon start.js",
-    "prod": "NODE_ENV=production node start.js"
+    "prod": "NODE_ENV=production node index.js"
   },
   "keywords": [],
   "author": "",
